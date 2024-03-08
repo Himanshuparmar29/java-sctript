@@ -1,1 +1,1 @@
-console.log("Himanshu");
+let name1="Himanshu";
