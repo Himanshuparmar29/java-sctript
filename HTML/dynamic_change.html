@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change</title>
+</head>
+
+<body>
+    Food: <select id="Food">
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+    </select>
+    Name: <select id="Name">
+    </select>
+</body>
+<script>
+    let foodlist = document.querySelector("#Food");
+    let namelist = document.querySelector("#Name");
+    
+    addOption(namelist, "Mango");
+    addOption(namelist, "Banana");
+    addOption(namelist, "Apple");
+
+    foodlist.addEventListener("change", function () {
+        let fvalu = foodlist.value;
+        namelist.innerHTML = "";
+        if (fvalu === "fruits") {
+            addOption(namelist, "Mango");
+            addOption(namelist, "Banana");
+            addOption(namelist, "Apple");
+        } else if (fvalu === "vegetables") { // Corrected spelling
+            addOption(namelist, "Potato");
+            addOption(namelist, "Tomato");
+            addOption(namelist, "Brinjal");
+        }
+    });
+
+    function addOption(selectedel, text) {
+        let option = document.createElement("option");
+        option.text = text;
+        selectedel.add(option);
+    }
+</script>
+
+</html>
